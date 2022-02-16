@@ -32,6 +32,9 @@ function calculateTotal() {
     document.getElementById('total-price').innerText = totalPrice;
 
 }
+function removeProduct(item) {
+    document.getElementById(item + '-display').style.display = 'none';
+}
 
 
 // phone case increase decrease events
@@ -48,4 +51,17 @@ document.getElementById("case-plus").addEventListener('click', function () {
 });
 document.getElementById("case-minus").addEventListener('click', function () {
     updateProductNumber('case', 59, false);
+});
+
+// remove item
+document.getElementById("phone-remove").addEventListener('click', function () {
+    removeProduct('phone');
+});
+document.getElementById("case-remove").addEventListener('click', function () {
+    removeProduct('case');
+});
+
+// check out
+document.getElementById("check-btn").addEventListener('click', function () {
+    alert('successful');
 });
