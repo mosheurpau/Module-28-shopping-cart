@@ -4,11 +4,11 @@ function updateProductNumber(product, price, isIncreasing) {
     if (isIncreasing == true) {
         productNumber = parseInt(productNumber) + 1;
     }
-    else if (productNumber > 0) {
+    else if (isIncreasing == false && productNumber > 0) {
         productNumber = parseInt(productNumber) - 1;
     }
     productInput.value = productNumber;
-    // update product total 
+    // update product total
     const productTotal = document.getElementById(product + '-total');
     productTotal.innerText = productNumber * price;
     // calculate total
@@ -37,7 +37,7 @@ function removeProduct(item) {
 }
 
 
-// phone case increase decrease events
+//handle  phone increase decrease events
 document.getElementById("phone-plus").addEventListener('click', function () {
     updateProductNumber('phone', 1219, true);
 });
